@@ -1,0 +1,15 @@
+entrypoint: bundle exec ruby server.rb --port $PORT
+env: flex
+runtime: ruby
+skip_files:
+  - Gemfile.lock
+  - yarn.lock
+  - package.lock 
+env_variables:
+  FOO: BAR
+manual_scaling:
+  instances: 1
+resources:
+  cpu: 1
+  memory_gb: 0.5
+  disk_size_gb: 10
